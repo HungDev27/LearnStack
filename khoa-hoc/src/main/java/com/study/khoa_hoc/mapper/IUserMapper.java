@@ -6,12 +6,10 @@ import com.study.khoa_hoc.dto.response.ProfileResponse;
 import com.study.khoa_hoc.dto.response.UserResponse;
 import com.study.khoa_hoc.entity.Profile;
 import com.study.khoa_hoc.entity.User;
-import org.mapstruct.AfterMapping;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.MappingTarget;
+import org.mapstruct.*;
 
-@Mapper(componentModel = "spring")
+//@Mapper(componentModel = "spring")
+@Mapper(componentModel = MappingConstants.ComponentModel.SPRING, nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
 public interface IUserMapper {
 
     // ========== METHOD 1: toResponse(User user) ==========

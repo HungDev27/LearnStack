@@ -1,10 +1,8 @@
 package com.study.khoa_hoc.dto.response;
 
-import com.study.khoa_hoc.entity.Profile;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
-import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
@@ -15,5 +13,7 @@ public class UserResponse {
     Long id;
     String name;
     String email;
+    String role;
+    boolean active;
     ProfileResponse profileResponse;
 }

@@ -3,12 +3,9 @@ package com.study.khoa_hoc.dto.request;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-
-import java.util.List;
 
 @Getter
 @Setter
@@ -29,7 +26,6 @@ public class UserRequest {
     @Size(min = 6, message = "Mật khẩu phải có ít nhất 6 ký tự.")
     String password;
 
-    @NotNull(message = "Profile không được để trống.")
-    @Valid
+     @Valid
     ProfileRequest profileRequest;
 }
