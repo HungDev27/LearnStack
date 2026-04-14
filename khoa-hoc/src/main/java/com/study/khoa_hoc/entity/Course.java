@@ -22,29 +22,12 @@ public class Course {
     String title;
     @Column(columnDefinition = "TEXT")
     String description;
-    Double price;
 
-    // [BỔ SUNG]: Soft Delete cho khóa học (ẩn khỏi danh sách bán nhưng vẫn giữ báo cáo)
-    boolean deleted = false;
+    private Integer duration;
 
-    // Nhiều khóa học có thể được tạo bởi một Giảng viên (User)
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    User user; // Người dạy
+    private Double price;
 
-    // Một khóa học có nhiều bài học, xóa khóa học sẽ xóa luôn các bài học liên quan (cascade)
-    @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
-    List<Lesson> lessons;
-
+    // 1-N với Classes
     @OneToMany(mappedBy = "course")
-    List<Enrollment> enrollments;
-//
-    @OneToMany(mappedBy = "course")
-    List<Review> reviews;
-
-    @CreationTimestamp
-    LocalDateTime createdAt;
-
-    @UpdateTimestamp
-    LocalDateTime updatedAt;
+    private List<Class> classes;
 }
