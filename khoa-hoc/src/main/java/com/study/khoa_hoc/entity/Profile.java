@@ -26,10 +26,6 @@ public class Profile {
     @Column(nullable = false)
     String avatar;
 
-    @CreationTimestamp
-    @Column(updatable = false)
-    LocalDateTime created_at;
-
     @OneToOne
     @JoinColumn(name= "user_id", unique = true)
     User user;

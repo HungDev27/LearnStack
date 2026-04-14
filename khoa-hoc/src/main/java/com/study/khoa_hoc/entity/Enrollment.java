@@ -17,21 +17,19 @@ public class Enrollment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    // [BỔ SUNG]: Trạng thái thanh toán (VD: PAID, UNPAID, REFUNDED)
-    String payment_status;
+    @Column(name = "enrollment_date")
+    private String enrollmentDate;
 
-    // [BỔ SUNG]: Số tiền thực tế học viên đã trả (phòng trường hợp có giảm giá)
-    Double amount_paid;
+    @Column(name = "final_score")
+    private Integer finalScore;
+
+    // N-1 với Student
     @ManyToOne
-    @JoinColumn(name = "user_id") // Ai đăng ký?
-    User user;
+    @JoinColumn(name = "user_id")
+    private User user;
 
+    // N-1 với Classes
     @ManyToOne
-    @JoinColumn(name = "course_id") // Đăng ký khóa học nào?
-    Course course;
-
-    String status; // Nên dùng Enum: PENDING, COMPLETED, CANCELLED
-
-    @CreationTimestamp
-    LocalDateTime created_at;
+    @JoinColumn(name = "class_id")
+    private Class classes;
 }
