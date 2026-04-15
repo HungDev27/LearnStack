@@ -12,8 +12,11 @@ import org.mapstruct.NullValuePropertyMappingStrategy;
 @Mapper( // Annotation chính của MapStruct, biến interface thành mapper tự động
         componentModel = "spring", // Tích hợp với Spring: MapStruct sẽ tạo bean Spring để inject vào
                                    // service/controller
+                                    //MapStruct sẽ dùng mapper khác để hỗ trợ mapping object lồng nhau
+
         uses = { ProfileMapper.class }, // Sử dụng ProfileMapper cho các mapping liên quan đến Profile (ví dụ:
                                         // ProfileRequest -> Profile)
+
         nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE // Bỏ qua mapping nếu giá trị nguồn
                                                                                    // là null (tránh ghi đè giá trị cũ
                                                                                    // bằng null)

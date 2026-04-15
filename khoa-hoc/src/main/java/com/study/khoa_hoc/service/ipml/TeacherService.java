@@ -68,9 +68,9 @@ public class TeacherService implements ITeacherService {
                 .orElseThrow(() -> new ApiException(ErrorCode.TEACHER_NOT_EXIST));
 
         // check ràng buộc với class
-//        if (teacher.getClass() != null && !teacher.getClass().isEmpty()) {
-//            throw new ApiException(ErrorCode.TEACHER_HAS_CLASSES);
-//        }
+        if (teacher.getClasses() != null && !teacher.getClasses().isEmpty()) {
+            throw new ApiException(ErrorCode.TEACHER_HAS_CLASSES);
+        }
 
         teacherRepository.deleteById(id);
     }

@@ -17,7 +17,7 @@ public class Teacher {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id;
+    Long id;
 
     String name;
 
@@ -28,6 +28,6 @@ public class Teacher {
 
     // 1-N với Class
     @OneToMany(mappedBy = "teacher")
-    List<Class> classes;
+    List<Classes> classes;
 
 }

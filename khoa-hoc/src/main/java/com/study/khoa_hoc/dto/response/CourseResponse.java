@@ -1,5 +1,6 @@
 package com.study.khoa_hoc.dto.response;
 
+import jakarta.persistence.Column;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -9,12 +10,13 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class TeacherResponse {
-
+public class CourseResponse {
     Long id;
+    String title;
 
-    String name;
+    String description;
 
-    String email;
+    Integer duration;
 
+    Double price;
 }

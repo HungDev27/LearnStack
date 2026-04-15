@@ -2,8 +2,8 @@ package com.study.khoa_hoc.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import lombok.experimental.FieldDefaults;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Entity
@@ -12,21 +12,20 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@FieldDefaults(level = AccessLevel.PRIVATE)
-public class Class {
+public class Classes {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Column(name = "class_name")
     private String className;
 
     @Column(name = "start_date")
-    private String startDate;
+    private LocalDate startDate;
 
     @Column(name = "end_date")
-    private String endDate;
+    private LocalDate  endDate;
 
     // N-1 với Course
     @ManyToOne

@@ -2,16 +2,11 @@ package com.study.khoa_hoc.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import lombok.experimental.FieldDefaults;
-import org.hibernate.annotations.CreationTimestamp;
-
-import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "enrollments")
 @Getter @Setter @NoArgsConstructor
 @AllArgsConstructor
-@FieldDefaults(level = AccessLevel.PRIVATE)
 public class Enrollment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,5 +26,5 @@ public class Enrollment {
     // N-1 với Classes
     @ManyToOne
     @JoinColumn(name = "class_id")
-    private Class classes;
+    private Classes classes;
 }
