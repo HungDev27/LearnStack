@@ -1,7 +1,6 @@
 package com.study.khoa_hoc.dto.response;
 
 import lombok.*;
-import lombok.experimental.FieldDefaults;
 
 import java.time.LocalDate;
 
@@ -10,12 +9,12 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ClassesResponse {
+public class ClassesDetailResponse {
     private Long id;
     private String className;
     private LocalDate startDate;
-    private LocalDate  endDate;
+    private LocalDate endDate;
 
-    private String teacherName;
-    private String courseTitle;
+    private TeacherResponse teacher;
+    private CourseResponse course;
 }

@@ -28,12 +28,12 @@ public class Classes {
     private LocalDate  endDate;
 
     // N-1 với Course
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "course_id")
     private Course course;
 
     // N-1 với Teacher
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "teacher_id")
     private Teacher teacher;
 

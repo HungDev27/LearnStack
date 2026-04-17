@@ -12,13 +12,15 @@ public enum ErrorCode {
     USER_NOT_EXIST(40401, "User is not exists", HttpStatus.NOT_FOUND),
     PROFILE_NOT_EXIST(40402, "Profile is not exists", HttpStatus.NOT_FOUND),
     TEACHER_NOT_EXIST(40403, "Teacher is not exists", HttpStatus.NOT_FOUND),
-    COURSE_NOT_EXIST(40403, "Teacher is not exists", HttpStatus.NOT_FOUND),
+    COURSE_NOT_EXIST(40404, "Teacher is not exists", HttpStatus.NOT_FOUND),
+    CLASSES_NOT_EXIST(40405, "Classes is not exists", HttpStatus.NOT_FOUND),
 
     //Vi phạm logic(lỗi:400)
     TEACHER_HAS_CLASSES(40001, "Cannot delete teacher because it is assigned to classes",HttpStatus.BAD_REQUEST),
     EMAIL_ALREADY_EXISTS(40002, "Email already exists", HttpStatus.BAD_REQUEST),
     PHONE_ALREADY_EXISTS(40003, "Phone number already exists", HttpStatus.BAD_REQUEST),
-    COURSE_HAS_CLASSES(40004, "Course has classes, cannot delete", HttpStatus.BAD_REQUEST);
+    COURSE_HAS_CLASSES(40004, "Course has classes, cannot delete", HttpStatus.BAD_REQUEST),
+    CLASS_HAS_ENROLLMENTS(40005,"Classes has enrollment, cannot delete",HttpStatus.BAD_REQUEST);
 
     Integer code;
     String message;
