@@ -5,6 +5,8 @@ import com.study.khoa_hoc.dto.request.UserRequest;
 import com.study.khoa_hoc.dto.request.UserUpdateRequest;
 import com.study.khoa_hoc.dto.response.UserResponse;
 import com.study.khoa_hoc.service.IUserService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -18,6 +20,7 @@ import java.util.List;
 @RequestMapping("/api/users")
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
+@Tag(name = "User API")
 public class UserController {
     IUserService userService;
 
@@ -26,6 +29,7 @@ public class UserController {
     // List<UserResponse> userResponses = userService.findAll();
     // return ResponseEntity.ok(userResponses);
     // }
+    @Operation(summary = "Get all users", description = "Create a new user in system")
     @GetMapping
     public ResponseEntity<?> getAll() {
         List<UserResponse> userResponses = userService.findAllOne();

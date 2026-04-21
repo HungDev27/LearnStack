@@ -2,6 +2,10 @@ package com.study.khoa_hoc.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "enrollments")
@@ -12,11 +16,14 @@ public class Enrollment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    @Column(name = "enrollment_date")
-    private String enrollmentDate;
+    @CreationTimestamp
+    @Column(name = "enrollment_date", updatable = false)
+    private LocalDate enrollmentDate;
 
     @Column(name = "final_score")
     private Integer finalScore;
+
+    //private Integer quantity;
 
     // N-1 với Student
     @ManyToOne
